@@ -1,0 +1,35 @@
+/* components/Item/Item.wxss */
+.item-box{
+  padding: 20rpx;
+}
+.item-box:active{
+  background: #f8f8f8;
+}
+.item-box-left{
+  flex: 0 0 200rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  /* aspect-ratio: 1; */
+}
+.item-box-right{
+  height: 150rpx;
+  flex: 1 1 auto;
+  margin-left: 20rpx;
+  justify-content: space-around;
+}
+.item-text-0{
+  font-size: 25rpx;
+}
+.item-text-1{
+  color: orangered;
+}
+.item-text-2{
+  font-size: 20rpx;
+  font-weight: 200;
+}
+.item-text-3{
+  font-size: 24rpx;
+}
+.mr-10{
+  margin-right: 10rpx;
+}
