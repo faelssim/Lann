@@ -27,7 +27,7 @@
   <!--  -->
   <view class="label-deep-dark bod-bottom">医生列表</view>
   <!-- Doctor List -->
-  <view class="flex-row ie-box padding-20 bod-bottom active-box doctor-box">
+  <view class="flex-row ie-box padding-20 bod-bottom doctor-box">
     <view class="flex-row">
       <image
         class="image-small image-radius"
@@ -37,7 +37,7 @@
     </view>
     <button class="btn-submit text-25">立即预约</button>
   </view>
-  <view class="flex-row ie-box padding-20 bod-bottom active-box doctor-box">
+  <view class="flex-row ie-box padding-20 bod-bottom doctor-box">
     <view class="flex-row">
       <image
         class="image-small image-radius"

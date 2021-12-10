@@ -54,11 +54,11 @@ Component({
       })
     },
     handleSendCode () {
-      if (this.isSending) {
+      const { phone, isSending} = this.data
+      if (isSending) {
         return
       }
       const { validatePhone } = app.globalData.util
-      const { phone } = this.data
       const { value, text } = validatePhone(phone)
       if (value) {
         this.setData({
@@ -77,10 +77,11 @@ Component({
         this.setData({
           seconds: this.data.seconds - 1
         }, (value) => {
-          if (this.data.seconds === 55) {
+          if (this.data.seconds === 0) {
             clearInterval(timer)
             this.setData({
-              isSending: false
+              isSending: false,
+              seconds: 59
             })
           }
         }) 
