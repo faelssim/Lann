@@ -1,0 +1,49 @@
+/* components/Input/Input.wxss */
+.f-input{
+  font-size: 30rpx;
+}
+.f-input-normal{
+  padding: 20rpx 0 0;
+}
+.f-input-normal-2{
+  padding: 20rpx 0;
+}
+.f-input-tip{
+  padding-bottom: 20rpx;
+  font-size: 26rpx;
+}
+.f-input-tip .iconfont{
+  color: transparent !important;
+}
+.f-input-tip text{
+  color: red;
+}
+.f-input .iconfont{
+  font-size: 46rpx;
+  color: #555;
+  margin-right: 20rpx;
+}
+.f-input input{
+  flex: 1 1 auto;
+}
+.f-input-placeholder{
+  font-weight: 100;
+  color: #c5c5c5;
+}
+.f-input-btn{
+  padding: 6rpx 20rpx;
+  color: #409eff;
+  border: 2rpx solid;
+  font-size: 28rpx;
+  border-radius: 30rpx;
+  margin-left: 20rpx;
+  white-space: nowrap;
+  /* font-weight: 100; */
+}
+.f-btn-active:active{
+  background: #409eff;
+  color: #fff;
+}
+.f-btn-disabled{
+  color: #c5c5c5;
+}

@@ -16,6 +16,7 @@
   flex: 1 1 auto;
   margin-left: 20rpx;
   justify-content: space-around;
+  overflow: hidden;
 }
 .item-text-0{
   font-size: 25rpx;
@@ -28,8 +29,22 @@
   font-weight: 200;
 }
 .item-text-3{
-  font-size: 24rpx;
+  font-size: 28rpx;
+}
+.item-box-right > view{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .mr-10{
   margin-right: 10rpx;
+}
+.item-box-footer{
+  align-items: flex-start;
+}
+.item-box-footer image{
+  width: 20rpx;
+  margin-top: 8rpx;
+  margin-right: 8rpx;
 }

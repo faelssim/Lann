@@ -1,0 +1,36 @@
+/* pages/login/login.wxss */
+.contaniner-login{
+  align-items: center;
+}
+.login-logo{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 20rpx 0 #000;
+  margin-bottom: 200rpx;
+}
+.login-box{
+  width: 70vw;
+}
+.mt-20{
+  margin-top: 20rpx;
+}
+.login-submit{
+  margin-top: 70rpx;
+  width: 100% !important;
+  font-size: 35rpx;
+  font-weight: normal;
+  letter-spacing: 10rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  padding: 0;
+  justify-content: center;
+  background: #409eff;
+  color: #fff;
+  /* margin: 0; */
+}
+.login-submit:active{
+  background:#fff;
+  color: #409eff;
+  border: 2rpx solid;
+}

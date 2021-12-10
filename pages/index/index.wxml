@@ -1,23 +1,13 @@
 <!--index.wxml-->
+<import src="../../template/Banner"></import>
 <view class="container">
   <!-- Banner -->
-  <swiper
-    autoplay="{{true}}"
-    indicator-dots="{{true}}"
-    circular="{{true}}"
-    indicator-color="rgba(0,0,0,0.5)"
-    indicator-active-color="#fff"
-  >
-    <swiper-item wx:for="{{banner}}" wx:key="index">
-        <image class="banner-img" src="{{item.img}}" mode="aspectFill"></image>
-      </swiper-item>
-  </swiper>
-  <view class="ie-box bod-bottom text-title">
+  <template is="banner" data="{{banner: banner}}"></template>
+  <!-- List -->
+  <view class="ie-box label-deep-dark">
     <text>门店预约</text>
   </view>
-  <item
-    wx:for="{{List}}"
-    wx:key="index"
-    data="{{item}}"
-  ></item>
+  <view class="index-item" wx:for="{{List}}" wx:key="index">
+    <item data="{{item}}"></item>
+  </view>
 </view>

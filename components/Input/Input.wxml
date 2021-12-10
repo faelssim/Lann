@@ -1,0 +1,26 @@
+<!--components/Input/Input.wxml-->
+<view class="bod-bottom">
+  <view class="flex-row f-input {{showTip ? 'f-input-normal' : 'f-input-normal-2'}}">
+    <i wx:if="icon" class="iconfont {{icon}}"></i>
+    <input
+      model:value="{{value}}"
+      type="{{type}}"
+      placeholder="{{placeholder}}"
+      placeholder-class="f-input-placeholder"
+      bindfocus="handleFocus"
+      bindblur="handleBlur"
+    />
+    <view wx:if="{{isNeedCode}}" class="f-input-btn {{isSending ? 'f-btn-disabled' : 'f-btn-active'}}" catchtap="handleSendCode">
+      {{
+        isSending ?
+        seconds + 'S 后可重新发送' :
+        '发送验证码'
+      }}
+    </view>
+  </view>
+  <!-- 提示信息 -->
+  <view wx:if="{{showTip}}" class="flex-row f-input f-input-tip">
+    <i wx:if="{{icon}}" class="iconfont {{icon}}"></i>
+    <text>{{ tipText }}</text>
+  </view>
+</view>

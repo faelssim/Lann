@@ -1,0 +1,3 @@
+<template name="midLineText">
+  <view  class="mid-line-text">ssd</view>
+</template>

@@ -1,0 +1,30 @@
+<wxs module="bannerConfig">
+  var vh = function (v) {
+    return v || 20
+  }
+  var color = function (c) {
+    return c || 'rgba(0,0,0,0.5)'
+  }
+  var activeColor = function (c) {
+    return c || '#fff'
+  }
+  module.exports = {
+    vh: vh,
+    color: color,
+    activeColor: activeColor
+  }
+</wxs>
+<template name="banner">
+  <swiper
+    class="{{'banner-img-' + bannerConfig.vh(vh)}}"
+    autoplay="{{true}}"
+    indicator-dots="{{true}}"
+    circular="{{true}}"
+    indicator-color="{{bannerConfig.color(color)}}"
+    indicator-active-color="{{bannerConfig.activeColor(activeColor)}}"
+  >
+    <swiper-item class="{{'banner-img-' + bannerConfig.vh(vh)}}" wx:for="{{banner}}" wx:key="index">
+        <image class="{{'banner-img-' + bannerConfig.vh(vh)}}" src="{{item.img}}" mode="aspectFill"></image>
+      </swiper-item>
+  </swiper>
+</template>

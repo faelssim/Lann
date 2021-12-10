@@ -1,0 +1,50 @@
+<!--pages/detail/detail.wxml-->
+<import src="../../template/Banner"></import>
+<import src="../../template/MidLineText"></import>
+<view class="container">
+  <!-- Banner -->
+  <template is="banner" data="{{banner: banner, vh: 30}}"></template>
+  <!-- Title Info -->
+  <view class="ie-box detail-title">
+    <text>Lann Massage上海分店</text>
+  </view>
+  <view class="ie-box flex-row detail-info">
+    <text class="shrink-0">门店地址：</text>
+    <text>瀚海阑干百丈冰，愁云黪淡万里凝。瀚海阑干百丈冰，愁云黪淡万里凝。</text>
+  </view>
+  <view class="ie-box flex-row detail-info">
+    <text class="shrink-0">联系电话：</text>
+    <text>021-89023221</text>
+  </view>
+  <view class="ie-box flex-row detail-info">
+    <text class="shrink-0">营业时间：</text>
+    <text>09:00 - 17:00</text>
+  </view>
+  <view class="ie-box flex-row bod-bottom detail-info detail-info-2">
+    <text class="shrink-0">交通信息：</text>
+    <text>乘坐地铁1号线转920路</text>
+  </view>
+  <!--  -->
+  <view class="label-deep-dark bod-bottom">医生列表</view>
+  <!-- Doctor List -->
+  <view class="flex-row ie-box padding-20 bod-bottom active-box doctor-box">
+    <view class="flex-row">
+      <image
+        class="image-small image-radius"
+        src="https://images.pexels.com/photos/7448401/pexels-photo-7448401.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+      ></image>
+      <text class="text-30">faelssim</text>
+    </view>
+    <button class="btn-submit text-25">立即预约</button>
+  </view>
+  <view class="flex-row ie-box padding-20 bod-bottom active-box doctor-box">
+    <view class="flex-row">
+      <image
+        class="image-small image-radius"
+        src="https://images.pexels.com/photos/4062272/pexels-photo-4062272.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+      ></image>
+      <text class="text-30">花满楼</text>
+    </view>
+    <button class="btn-submit text-25">立即预约</button>
+  </view>
+</view>

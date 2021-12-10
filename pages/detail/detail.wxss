@@ -1,0 +1,28 @@
+/* pages/detail/detail.wxss */
+.detail-title{
+  padding: 30rpx 20rpx;
+  align-items: center;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.detail-info{
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  align-items: flex-start;
+}
+.detail-info + .detail-info{
+  margin-top: 20rpx;
+}
+.detail-info-2{
+  padding-bottom: 10rpx;
+}
+.doctor-box{
+  justify-content: space-between;
+}
+.doctor-box .text-30{
+  margin-left: 20rpx;
+}
+.doctor-box .btn-submit{
+  width: auto !important;
+}

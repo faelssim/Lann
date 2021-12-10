@@ -1,19 +1,21 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return `${[year, month, day].map(formatNumber).join('/')} ${[hour, minute, second].map(formatNumber).join(':')}`
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : `0${n}`
+function validatePhone (value) {
+  if (!value) {
+    return {
+      value: false,
+      text: '请输入手机号'
+    }
+  }
+  if (!/^1\d{10}$/.test(value)) {
+    return {
+      value: false,
+      text: '手机号格式有误'
+    }
+  }
+  return {
+    value: true
+  }
 }
 
 module.exports = {
-  formatTime
+  validatePhone: validatePhone
 }

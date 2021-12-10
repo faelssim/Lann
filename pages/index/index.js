@@ -1,6 +1,4 @@
 // index.js
-// 获取应用实例
-const app = getApp()
 Page({
   data: {
     banner: [
@@ -26,6 +24,26 @@ Page({
     ]
   },
   onLoad() {
-    
+    // const AUTH_LOCATION = 'scope.userLocation'
+    // wx.getSetting().then(({authSetting}) => {
+    //   if (!authSetting[AUTH_LOCATION]) {
+    //     wx.authorize({
+    //       scope: AUTH_LOCATION
+    //     }).then(() => {
+    //       console.log('pass')
+    //     }).catch(() => {
+    //       // 未授权
+    //     })
+    //   } else {
+    //     console.log('pass')
+    //   }
+    // })
+    wx.getLocation({
+      isHighAccuracy: true
+    }).then((res) => {
+      // 已授权
+    }).catch(() => {
+      // 未授权
+    })
   } 
 })

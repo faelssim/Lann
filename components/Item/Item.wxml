@@ -1,14 +1,15 @@
 <!--components/Item/Item.wxml-->
-<view class="ie-box bod-bottom flex-row item-box">
+<view class="ie-box bod-top bod-bottom flex-row item-box">
   <image class="item-box-left" src="{{data.img}}" mode="scaleToFill"></image>
   <view class="flex-column item-box-right">
     <view><text>{{data.title}}</text></view>
     <view>
-      <text wx:if="{{data.isUsed}}" class="item-text-1 item-text-2 mr-10">[您最近去]</text>
-      <text class="item-text-2">距离您约{{data.distance}}km</text>
+      <text class="item-text-3">营业时间：</text>
+      <text class="item-text-3">距离您约{{data.distance}}km</text>
     </view>
-    <view class="flex-row item-box-footer">
-      <text class="item-text-2 item-text-3">{{data.address}}</text>
+    <view>
+      <text class="item-text-3">地址</text>
+      <text class="item-text-3">{{data.address}}</text>
     </view>
   </view>
 </view>

@@ -1,0 +1,37 @@
+<!--pages/login/login.wxml-->
+<view class="container-100 flex-column contaniner-login">
+  <view class="flex-column">
+    <!-- <text>CVP</text> -->
+    <image
+      class="login-logo"
+      src="https://images.pexels.com/photos/2389349/pexels-photo-2389349.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+    ></image>
+  </view>
+  <view class="login-box">
+    <view>
+      <f-input
+        model:value="{{phone}}"
+        show-tip="{{tip.phone.show}}"
+        tip-text="{{tip.phone.text}}"
+        icon="icon-mobilephone"
+        placeholder="请输入手机号"
+        type="number"
+        bindfocus="handleInputFocus"
+      ></f-input>
+    </view>
+    <view class="mt-20">
+      <f-input
+        model:value="{{code}}"
+        is-need-code="{{true}}"
+        show-tip="{{tip.code.show}}"
+        tip-text="{{tip.code.text}}"
+        phone="{{phone}}"
+        icon="icon-lock"
+        placeholder="请输入短信验证码"
+        type="number"
+        bindfocus="handleInputFocus"
+      ></f-input>
+    </view>
+    <button class="flex-row login-submit" hover-class="none" catchtap="handleLogin">登录</button>
+  </view>
+</view>

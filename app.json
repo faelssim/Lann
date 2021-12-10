@@ -1,15 +1,26 @@
 {
+  "entryPagePath": "pages/detail/detail",
   "pages": [
+    "pages/detail/detail",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/login/login"
   ],
+  "usingComponents": {
+    "f-input": "./components/Input/Input"
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Faelssim",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "有了您的位置信息，将可以给您推荐更合适的门店哦！"
+    }
+  }
 }
