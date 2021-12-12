@@ -1,0 +1,11 @@
+/* pages/subscribe/confirm.wxss */
+.confirm-box{
+  flex: 1 1 auto;
+  overflow: hidden auto;
+}
+.confirm-item{
+  align-items: flex-start;
+}
+.confirm-item > text + text{
+  flex: 1 1 auto;
+}

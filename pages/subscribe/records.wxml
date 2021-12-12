@@ -1,0 +1,36 @@
+<!--pages/subscribe/records.wxml-->
+<view class="container-100">
+  <view class="ie-box flex-row record-tabs">
+    <view
+      class="flex-column {{item.value === current ? 'record-tab-active' : ''}}"
+      wx:for="{{tabs}}"
+      wx:key="{{item.value}}"
+      data-value="{{item.value}}"
+      catchtap="handleChangeTab"
+    >
+      <view>
+        <text class="text-30">{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="record-box">
+    <scroll-view
+      class="record-scroll-view"
+      scroll-y="{{true}}"
+    >
+      <record-item></record-item>
+      <view class="mt-10">
+        <record-item></record-item>
+      </view>
+      <view class="mt-10">
+        <record-item></record-item>
+      </view>
+      <view class="mt-10">
+        <record-item></record-item>
+      </view>
+      <view class="mt-10">
+        <record-item></record-item>
+      </view>
+    </scroll-view>
+  </view>
+</view>

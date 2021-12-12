@@ -1,12 +1,24 @@
 {
-  "entryPagePath": "pages/login/login",
+  "entryPagePath": "pages/search/history",
   "pages": [
     "pages/detail/detail",
     "pages/index/index",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/subscribe/subscribe",
+    "pages/subscribe/datePicker",
+    "pages/subscribe/confirm",
+    "pages/subscribe/success",
+    "pages/subscribe/records",
+    "pages/subscribe/update",
+    "pages/subscribe/detail",
+    "pages/search/customer",
+    "pages/search/history"
   ],
   "usingComponents": {
-    "f-input": "./components/Input/Input"
+    "f-input": "./components/Input/Input",
+    "f-calendar": "./components/Calendar/Calendar",
+    "f-textarea": "./components/Textarea/Textarea",
+    "f-header": "./components/Header/Header"
   },
   "window": {
     "backgroundTextStyle": "light",

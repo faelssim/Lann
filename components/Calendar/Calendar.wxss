@@ -1,0 +1,72 @@
+/* components/Calendar/Calendar.wxss */
+.f-calendar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+}
+.f-calendar-box{
+  /*  */
+  width: 80vw;
+  background: #fff;
+  padding-bottom: 30rpx;
+  position: relative;
+  transform: translateY(-40rpx);
+  opacity: 0;
+}
+.f-calendar-header{
+  background: #e8e8e8;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  padding: 20rpx 0;
+}
+.f-calendar-top text{
+  flex: 1 0 auto;
+  text-align: center;
+}
+.f-calendar-item{
+  margin-top: 20rpx;
+}
+.f-calendar-cell{
+  width: calc(100% / 7);
+  text-align: center;
+  position: relative;
+}
+.f-calendar-cell-2{
+  padding: 20rpx 0;
+}
+.f-text-sub{
+  font-size: 20rpx;
+  position: absolute;
+  bottom: -5rpx;
+  white-space: nowrap;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--theme-color);
+}
+.f-text-bold{
+  font-weight: 900;
+  color: #888 !important;
+}
+.f-text-tiny{
+  font-weight: 200;
+  color: #aaa;
+}
+.f-text-light{
+  color: red !important;
+}
+.f-calendar-mid{
+  flex-wrap: wrap;
+}
+.f-c-close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 50rpx;
+  color: #fff;
+  transform: translateY(-100%);
+}

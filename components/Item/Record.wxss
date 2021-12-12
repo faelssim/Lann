@@ -1,0 +1,25 @@
+/* components/Item/Record.wxss */
+.record-item{
+  width: 100vw;
+}
+.record-item-header{
+  justify-content: space-between;
+}
+.record-item-header text:nth-child(1){
+  color: var(--text-gray);
+}
+.record-item-header text + text{
+  color: orangered;
+}
+.record-item-footer{
+  justify-content: flex-end;
+}
+.record-item-footer > view{
+  width: 20vw;
+}
+.record-item-mid .flex-row{
+  align-items: flex-start;
+}
+.record-item-mid .flex-row > text + text{
+  flex: 1 1 auto;
+}

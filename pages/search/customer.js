@@ -1,29 +1,17 @@
-// pages/detail/detail.js
+// pages/search/customer.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    banner: [
-      { img: 'https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&dpr=2&w=500' },
-      { img: 'https://images.pexels.com/photos/1495580/pexels-photo-1495580.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' },
-      { img: 'https://images.pexels.com/photos/428429/pexels-photo-428429.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' },
-      { img: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' }
+    serarchDropList: [
+      { label: '全部', value: 0 },
+      { label: '华东区', value: 1 },
+      { label: '山西省', value: 2 }
     ]
   },
-  handleOpenMap () {
-    wx.openLocation({
-      latitude: 39.916527,
-      longitude: 116.397128
-    })
-  },
-  handleCallPhone (e) {
-    const { currentTarget: { dataset: { phone } } } = e
-    wx.makePhoneCall({
-      phoneNumber: phone,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,0 +1,13 @@
+/* pages/subscribe/detail.wxss */
+.detail-box > view{
+  align-items: flex-start;
+}
+.detail-box .flex-row > text + text{
+  flex: 1 1 auto;
+}
+.detail-box-footer{
+  justify-content: flex-end;
+}
+.detail-box-footer > view{
+  width: 20vw;
+}

@@ -1,0 +1,73 @@
+<!--pages/subscribe/datePicker.wxml-->
+<wxs module="format">
+  function monthDate (v) {
+    return v.substring(5)
+  }
+  function weekDate (v) {
+    return ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][v]
+  }
+  module.exports = {
+    monthDate: monthDate,
+    weekDate: weekDate
+  }
+</wxs>
+<view class="flex-column container-100 container-picker">
+  <view class="picker-box w-100">
+    <view class="ie-box label-deep-dark">
+      <text>日期</text>
+    </view>
+    <view class="w-100 flex-row picker-row-scroll">
+      <view
+        class="flex-column shrink-0 {{ item.v === '2021-12-11' ? 'picker-selected' : '' }}"
+        wx:for="{{dateList}}"
+        wx:key="{{item.v}}"
+      >
+        <text class="text-30">{{format.weekDate(item.w)}}</text>
+        <text class="text-25">{{format.monthDate(item.v)}}</text>
+      </view>
+      <!-- <view class="shrink-0"></view> -->
+      <view class="shrink-0 flex-column picker-cell-more" catchtap="handleOpenCalendar">
+        <text class="text-30">更多</text>
+        <text class="text-30">日期</text>
+      </view>
+    </view>
+    <view class="w-100 mt-10 bod-bottom flex-row picker-row-scroll picker-row-scroll-2">
+      <view class="flex-column shrink-0 picker-selected-2">
+        <text class="text-30">上午</text>
+        <text class="text-25">09:00 ~ 12:00</text>
+      </view>
+      <view class="flex-column shrink-0">
+        <text class="text-30">下午</text>
+        <text class="text-25">12:00 ~ 18:00</text>
+      </view>
+    </view>
+    <view class="w-100 flex-row bod-bottom picker-time">
+      <view class="ie-box image-radius-10 flex-column bod picker-time-active" data-text="可预约">
+        <text class="mt-20 text-30">09:00 ~ 10:00</text>
+      </view>
+      <view class="ie-box image-radius-10 flex-column bod picker-time-active" data-text="可预约">
+        <text class="mt-20 text-30">09:00 ~ 10:00</text>
+      </view>
+      <view class="ie-box image-radius-10 flex-column bod picker-time-active" data-text="可预约">
+        <text class="mt-20 text-30">09:00 ~ 10:00</text>
+      </view>
+      <view class="ie-box image-radius-10 flex-column bod picker-time-active" data-text="可预约">
+        <text class="mt-20 text-30">09:00 ~ 10:00</text>
+      </view>
+    </view>
+    <view class="ie-box label-deep-dark bod-top bod-bottom mt-10">
+      <text>备注</text>
+    </view>
+    <view class="ie-box padding-20">
+      <f-textarea
+        placeholder="请填写备注信息"
+        model:value="{{comments}}"
+      ></f-textarea>
+    </view>
+  </view>
+  <!-- Footer -->
+  <view class="w-100 shrink-0">
+    <button class="btn-submit btn-submit-large text-30 btn-submit-radius-0" catchtap="handleSelectDate">下一步</button>
+  </view>
+</view>
+<f-calendar model:visible="{{visible}}"></f-calendar>

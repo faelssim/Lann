@@ -1,34 +1,20 @@
-// pages/detail/detail.js
+// pages/subscribe/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    banner: [
-      { img: 'https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&dpr=2&w=500' },
-      { img: 'https://images.pexels.com/photos/1495580/pexels-photo-1495580.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' },
-      { img: 'https://images.pexels.com/photos/428429/pexels-photo-428429.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' },
-      { img: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' }
-    ]
+
   },
-  handleOpenMap () {
-    wx.openLocation({
-      latitude: 39.916527,
-      longitude: 116.397128
-    })
-  },
-  handleCallPhone (e) {
-    const { currentTarget: { dataset: { phone } } } = e
-    wx.makePhoneCall({
-      phoneNumber: phone,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: '预约详情-已预约',
+    })
   },
 
   /**

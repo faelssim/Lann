@@ -1,0 +1,143 @@
+<!--pages/subscribe/subscribe.wxml-->
+<view class="flex-column container-100">
+  <view class="sub-box w-100">
+    <!--  -->
+    <view class="ie-box label-deep-dark bod-bottom">
+      <text>客户信息</text>
+    </view>
+    <view class="ie-box sub-item bod-bottom">
+      <f-input
+        required="{{true}}"
+        border="{{false}}"
+        show-tip="{{false}}"
+        open-slot="{{true}}"
+        align="right"
+        label="客户类型"
+        tip-text=""
+      >
+        <view class="text-30">
+          <radio-group data-key="customType" bindchange="handleRadioGroupChange">
+            <radio value="0" checked="{{customType === 0}}" color="{{themeColor}}" class="mr-20"><text class="text-30">老客户</text></radio>
+            <radio value="1" checked="{{customType === 1}}" color="{{themeColor}}"><text class="text-30">新客户</text></radio>
+          </radio-group>
+        </view>
+      </f-input>
+    </view>
+    <view class="ie-box sub-item bod-bottom">
+      <f-input
+        border="{{false}}"
+        required="{{true}}"
+        open-slot="{{customType === 0}}"
+        align="right"
+        label="客户姓名"
+        placeholder="请填写"
+      >
+        <view class="{{customName ? '' : 'input-placeholder'}}">
+          {{ customName || '请选择>' }}
+        </view>
+      </f-input>
+    </view>
+    <view class="ie-box sub-item bod-bottom" wx:if="{{customType === 1}}">
+      <f-input
+        border="{{false}}"
+        align="right"
+        label="身份证号码"
+        placeholder="请填写"
+      >
+      </f-input>
+    </view>
+    <view class="ie-box sub-item bod-bottom" wx:if="{{customType === 1}}">
+      <f-input
+        border="{{false}}"
+        required="{{true}}"
+        open-slot="{{true}}"
+        align="right"
+        label="出生年月日"
+      >
+      <view class="{{birthday ? '' : 'input-placeholder'}}">
+          {{ birthday || '请选择>' }}
+        </view>
+      </f-input>
+    </view>
+    <view class="ie-box sub-item bod-bottom" wx:if="{{customType === 1}}">
+      <f-input
+        border="{{false}}"
+        align="right"
+        label="年龄"
+        placeholder="请填写"
+      >
+      </f-input>
+    </view>
+    <view class="ie-box sub-item bod-bottom" wx:if="{{customType === 1}}">
+      <f-input
+        required="{{true}}"
+        border="{{false}}"
+        show-tip="{{false}}"
+        open-slot="{{true}}"
+        align="right"
+        label="性别"
+        tip-text=""
+      >
+        <view class="text-30">
+          <radio-group data-key="sex" bindchange="handleRadioGroupChange">
+            <radio value="1" checked="{{sex === 1}}" color="{{themeColor}}" class="mr-20"><text class="text-30">男</text></radio>
+            <radio value="0" checked="{{sex === 0}}" color="{{themeColor}}"><text class="text-30">女</text></radio>
+          </radio-group>
+        </view>
+      </f-input>
+    </view>
+    <view class="ie-box sub-item bod-bottom" wx:if="{{customType === 1}}">
+      <f-input
+        border="{{false}}"
+        align="right"
+        label="手机号"
+        placeholder="请填写"
+      >
+      </f-input>
+      </view>
+    <!--  -->
+    <view class="ie-box label-deep-dark bod-bottom bod-top mt-10">
+      <text>项目</text>
+    </view>
+    <view class="ie-box sub-item bod-bottom">
+      <f-input
+        border="{{false}}"
+        required="{{true}}"
+        open-slot="{{customType === 0}}"
+        align="right"
+        label="项目名称"
+      >
+        <view class="{{projectName ? '' : 'input-placeholder'}}">
+          {{ projectName || '请选择>' }}
+        </view>
+      </f-input>
+    </view>
+    <!--  -->
+    <view class="ie-box label-deep-dark bod-bottom bod-top mt-10">
+      <text>陪同人</text>
+    </view>
+    <view class="ie-box sub-item bod-bottom">
+      <f-input
+        border="{{false}}"
+        required="{{true}}"
+        align="right"
+        label="姓名"
+        placeholder="请填写"
+      >
+      </f-input>
+    </view>
+    <view class="ie-box sub-item bod-bottom">
+      <f-input
+        border="{{false}}"
+        required="{{true}}"
+        align="right"
+        label="手机号"
+        placeholder="请填写"
+      >
+      </f-input>
+    </view>
+  </view>
+  <view class="w-100 shrink-0">
+    <button class="btn-submit btn-submit-large text-30 btn-submit-radius-0" catchtap="handlePickerDate">选择预约时间</button>
+  </view>
+</view>

@@ -29,7 +29,24 @@ Component({
       type: String,
       value: ''
     },
-    phone: String
+    phone: String,
+    label: String,
+    required: {
+      type: Boolean,
+      value: false
+    },
+    border: {
+      type: Boolean,
+      value: true
+    },
+    align: {
+      type: String,
+      value: 'left'
+    },
+    openSlot: {
+      type: Boolean,
+      value: false
+    }
   },
 
   /**

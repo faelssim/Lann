@@ -1,0 +1,17 @@
+/* pages/subscribe/success.wxss */
+.success-box{
+  align-items: center;
+}
+.success-box image{
+  width: 250rpx;
+}
+.success-box > view{
+  justify-content: center;
+  margin-top: 150rpx;
+}
+.success-btn{
+  width: 35vw;
+}
+.success-btn + .success-btn{
+  margin-left: 50rpx;
+}

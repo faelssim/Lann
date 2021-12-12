@@ -1,0 +1,32 @@
+<!--pages/search/history.wxml-->
+<view class="container-100">
+  <f-header
+    drop-list="{{serarchDropList}}"
+    date="{{['2021-09-12', '2021-10-12']}}"
+    placeholder="请输入客户姓名"
+    type="dateRange"
+  ></f-header>
+  <scroll-view
+    scroll-y="{{true}}"
+    class="search-scroll-view"
+  >
+    <view class="ie-box bod-bottom bod-top mt-10 text-30 history-item">
+      <view class="flex-row padding-20">
+        <text class="text-gray">预约时间：2012-09-09 12:00~10:00</text>
+        <text>已预约</text>
+      </view>
+      <view class="ie-box padding-20 text-30 bod-top">
+        <view class="flex-row history-item-text">
+          <text class="shrink-0">客户姓名：</text>
+          <text>Jay</text>
+        </view>
+        <view class="flex-row history-item-text mt-20">
+          <text class="shrink-0">客户姓名：</text>
+          <text>sajj继续啊是相爱就心塞心决赛脚下摄像机撒娇下乡记司机</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+

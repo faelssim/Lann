@@ -1,0 +1,22 @@
+<!--pages/subscribe/confirm.wxml-->
+<view class="flex-column container-100">
+  <view class="confirm-box w-100">
+    <view class="ie-box label-deep-dark bod-top bod-bottom">
+      <text>客户信息</text>
+    </view>
+    <view class="ie-box padding-20 text-30">
+      <view class="flex-row confirm-item">
+        <text class="shrink-0">客户姓名：</text>
+        <text>JAY</text>
+      </view>
+      <view class="flex-row confirm-item mt-10">
+        <text class="shrink-0">身份证号码：</text>
+        <text>390293382838</text>
+      </view>
+    </view>
+  </view>
+  <!-- Footer -->
+  <view class="w-100 shrink-0">
+    <button class="btn-submit btn-submit-large text-30 btn-submit-radius-0" catchtap="handleSelectDate">确定预约</button>
+  </view>
+</view>

@@ -8,11 +8,11 @@
   <view class="ie-box detail-title">
     <text>Lann Massage上海分店</text>
   </view>
-  <view class="ie-box flex-row detail-info">
+  <view class="ie-box flex-row detail-info" catchtap="handleOpenMap">
     <text class="shrink-0">门店地址：</text>
     <text>瀚海阑干百丈冰，愁云黪淡万里凝。瀚海阑干百丈冰，愁云黪淡万里凝。</text>
   </view>
-  <view class="ie-box flex-row detail-info">
+  <view class="ie-box flex-row detail-info" data-phone="0512-89920912" catchtap="handleCallPhone">
     <text class="shrink-0">联系电话：</text>
     <text>021-89023221</text>
   </view>
@@ -35,7 +35,7 @@
       ></image>
       <text class="text-30">faelssim</text>
     </view>
-    <button class="btn-submit text-25">立即预约</button>
+    <button class="btn-submit btn-submit-active text-25">立即预约</button>
   </view>
   <view class="flex-row ie-box padding-20 bod-bottom doctor-box">
     <view class="flex-row">
@@ -45,6 +45,6 @@
       ></image>
       <text class="text-30">花满楼</text>
     </view>
-    <button class="btn-submit text-25">立即预约</button>
+    <button class="btn-submit btn-submit-active text-25">立即预约</button>
   </view>
 </view>

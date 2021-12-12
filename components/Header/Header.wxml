@@ -1,0 +1,58 @@
+<!--components/Header/Header.wxml-->
+<wxs module="format">
+  function date (v) {
+    return v.join(' ~ ')
+  }
+  module.exports = {
+    date: date
+  }
+</wxs>
+<view class="ie-box flex-row w-100 bod-top bod-bottom f-header">
+  <view
+    class="shrink-0 flex-row bod-right f-header-drop"
+    wx:if="{{dropList.length}}"
+    catchtap="handleOpenDrop"
+  >
+    <text class="text-30">{{dropList[dropIndex][labelKey]}}</text>
+    <i class="iconfont icon-play_fill {{open ? 'i-reverse' : ''}}"></i>
+  </view>
+  <view class="f-header-mid">
+    <input
+      wx:if="{{type === 'input'}}"
+      placeholder="{{placeholder}}"
+      model:value="{{value}}"
+      class="text-30"
+      placeholder-class="input-placeholder"
+      bindfocus="handleFocus"
+    />
+    <view
+      wx:if="{{type === 'dateRange'}}"
+      class="flex-row text-30 {{date.length ? '' : 'input-placeholder'}}"
+      catchtap="handleOpenPicker"
+    >
+      <i class="iconfont icon-activity_fill text-gray shrink-0"></i>
+      <text class="f-header-mid-text">{{format.date(date)}}</text>
+    </view>
+  </view>
+  <button class="shrink-0 f-header-btn" catchtap="handleSearch">查询</button>
+</view>
+<!-- droplist -->
+<view class="f-header-suggestion {{open ? 'f-header-suggestion-open' : ''}}">
+  <view
+    class="ie-box padding-20 bod-bottom f-header-suggestion-item"
+    wx:for="{{dropList}}"
+    wx:key="{{item[valueKey]}}"
+    data-value="{{item[valueKey]}}"
+    catchtap="handleCheckedItem"
+  >
+    <text class="text-30 {{ item[valueKey] === dropIndex ? 'f-header-suggestion-active' : '' }}">{{item[labelKey]}}</text>
+  </view>
+  <view class="flex-row f-header-suggestion-suffix">
+    <view class="flex-row" catchtap="handleCloseDrop">
+      <i class="iconfont icon-packup"></i>
+      <text class="text-25">收起</text>
+    </view>
+  </view>
+</view>
+
+<f-calendar model:visible="{{visible}}"></f-calendar>

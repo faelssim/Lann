@@ -1,0 +1,25 @@
+<!--components/Item/Record.wxml-->
+<view class="record-item">
+  <view class="ie-box padding-20 text-30 flex-row bod-top bod-bottom record-item-header">
+    <text>创建时间：2012-09-20 09:32</text>
+    <text>已预约</text>
+  </view>
+  <view class="ie-box padding-20 text-30 record-item-mid">
+    <view class="flex-row">
+      <text class="shrink-0">客户姓名：</text>
+      <text>Jay</text>
+    </view>
+    <view class="flex-row mt-10">
+      <text class="shrink-0">预约门店：</text>
+      <text>上海闵行区杨浦大道1号院上海闵行区杨浦大道1号院上海闵行区杨浦大道1号院</text>
+    </view>
+  </view>
+  <view class="ie-box padding-20 flex-row bod-top bod-bottom record-item-footer">
+    <view class="mr-20">
+      <button class="btn-submit-ghost btn-submit-disabled text-25">修改预约</button>
+    </view>
+    <view>
+      <button class="btn-submit-ghost text-25">修改预约</button>
+    </view>
+  </view>
+</view>

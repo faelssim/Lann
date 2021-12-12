@@ -1,34 +1,32 @@
-// pages/detail/detail.js
+// pages/subscribe/datePicker.js
+const { globalData: { util } } = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    banner: [
-      { img: 'https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&dpr=2&w=500' },
-      { img: 'https://images.pexels.com/photos/1495580/pexels-photo-1495580.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' },
-      { img: 'https://images.pexels.com/photos/428429/pexels-photo-428429.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' },
-      { img: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' }
-    ]
+    visible: false,
+    value: '',
+    dateList: [],
+    comments: ''
   },
-  handleOpenMap () {
-    wx.openLocation({
-      latitude: 39.916527,
-      longitude: 116.397128
+
+  handleOpenCalendar () {
+    this.setData({
+      visible: true
     })
   },
-  handleCallPhone (e) {
-    const { currentTarget: { dataset: { phone } } } = e
-    wx.makePhoneCall({
-      phoneNumber: phone,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const dateList = Object.values(util.getValidDateRange('2021-12-11', 7))
+    this.setData({
+      dateList: dateList
+    })
   },
 
   /**

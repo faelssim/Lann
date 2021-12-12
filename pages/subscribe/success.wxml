@@ -1,0 +1,13 @@
+<!--pages/subscribe/success.wxml-->
+<view class="container-100 flex-column success-box">
+  <image src="../../assets/success.png" mode="widthFix"></image>
+  <text class="text-40 mt-10">恭喜您，预约成功~</text>
+  <view class="flex-row w-100"> 
+    <view class="success-btn">
+      <button class="btn-submit btn-submit-small btn-submit-active text-30" catchtap="handleView">查看详情</button>
+    </view>
+    <view class="success-btn">
+      <button class="btn-submit btn-submit-small btn-submit-active text-30" catchtap="handleContinue">继续预约</button>
+    </view>
+  </view>
+</view>

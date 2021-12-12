@@ -1,15 +1,21 @@
 <!--components/Input/Input.wxml-->
-<view class="bod-bottom">
-  <view class="flex-row f-input {{showTip ? 'f-input-normal' : 'f-input-normal-2'}}">
+<view class="{{border ? 'bod-bottom' : ''}}">
+  <view class="text-30 flex-row f-input {{showTip ? 'f-input-normal' : 'f-input-normal-2'}}">
+    <text wx:if="{{label ? true : false}}" class="shrink-0">{{label}}<text wx:if="{{required}}" class="f-text-red">*</text></text>
     <i wx:if="icon" class="iconfont {{icon}}"></i>
-    <input
-      model:value="{{value}}"
-      type="{{type}}"
-      placeholder="{{placeholder}}"
-      placeholder-class="f-input-placeholder"
-      bindfocus="handleFocus"
-      bindblur="handleBlur"
-    />
+    <view class="f-input-mid f-align-{{align}}">
+      <slot wx:if="{{openSlot}}"></slot>
+      <input
+        wx:else
+        model:value="{{value}}"
+        type="{{type}}"
+        placeholder="{{placeholder}}"
+        cursor-spacing="{{10}}"
+        placeholder-class="input-placeholder"
+        bindfocus="handleFocus"
+        bindblur="handleBlur"
+      />
+    </view>
     <view wx:if="{{isNeedCode}}" class="f-input-btn {{isSending ? 'f-btn-disabled' : 'f-btn-active'}}" catchtap="handleSendCode">
       {{
         isSending ?
@@ -20,7 +26,10 @@
   </view>
   <!-- 提示信息 -->
   <view wx:if="{{showTip}}" class="flex-row f-input f-input-tip">
-    <i wx:if="{{icon}}" class="iconfont {{icon}}"></i>
-    <text>{{ tipText }}</text>
+    <text wx:if="{{label ? true : false}}" class="text-30 f-text-transparent">{{label}}<text wx:if="{{required}}" class="f-text-red f-text-transparent">*</text></text>
+    <i wx:if="{{icon}}" class="f-text-transparent iconfont {{icon}}"></i>
+    <view class="f-input-mid f-align-{{align}}">
+      <text class="f-text-red">{{ tipText }}</text>
+    </view>
   </view>
 </view>

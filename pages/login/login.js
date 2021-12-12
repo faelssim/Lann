@@ -19,9 +19,15 @@ Page({
     },
     phone: '',
     code: '',
+    visible: false,
+    date: '',
   },
 
   handleLogin () {
+    this.setData({
+      visible: !this.data.visible
+    })
+    return
     const { validatePhone } = app.globalData.util
     const { tip, phone, code } = this.data
     const { value, text } = validatePhone(phone)

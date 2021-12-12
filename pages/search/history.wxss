@@ -1,0 +1,17 @@
+/* pages/search/history.wxss */
+.search-scroll-view{
+  width: 100vw;
+  height: calc(100% - 100rpx);
+}
+.history-item:active{
+  background: var(--light-gray-color);
+}
+.history-item > view{
+  justify-content: space-between;
+}
+.history-item-text{
+  align-items: flex-start;
+}
+.history-item-text > text + text{
+  flex: 1 1 auto;
+}

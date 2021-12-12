@@ -1,7 +1,20 @@
 /**app.wxss**/
 @import './styles/iconfont.wxss';
+page{
+  --theme-color: #ff6706;
+  --light-gray-color: #f5f5f5;
+  --gray-color: #f0f0f0;
+  --active-color: blue;
+  --text-gray: #777;
+}
 .container-100 {
   height: 100vh;
+}
+.w-100{
+  width: 100vw !important;
+}
+.bod{
+  border: 0.5rpx solid #e5e5e5;
 }
 .bod-bottom{
   border-bottom: 0.5rpx solid #e5e5e5;
@@ -49,30 +62,65 @@
   height: 50vh;
 }
 .label-deep-dark{
-  font-size: 30rpx;
+  font-size: 35rpx;
   font-weight: 900;
   padding: 20rpx;
 }
 .padding-20{
   padding: 20rpx;
 }
+.ml-20{
+  margin-left: 20rpx;
+}
+.mr-20{
+  margin-right: 20rpx;
+}
+.mb-20{
+  margin-bottom: 20rpx;
+}
+.mt-20{
+  margin-top: 20rpx;
+}
+.mt-10{
+  margin-top: 10rpx;
+}
 .active-box:active{
   background: #f8f8f8;
 }
 .btn-submit{
   width: auto !important;
-  margin: 0 !important;
   padding: 10rpx 20rpx;
   font-weight: normal;
   border-radius: 50rpx;
-  background: #409eff;
+  background: var(--theme-color);
   color: #fff;
   border: 2rpx solid transparent;
 }
-.btn-submit:active{
+.btn-submit-ghost{
+  width: auto !important;
+  padding: 10rpx 20rpx;
+  font-weight: normal;
+  border-radius: 50rpx;
+  color: var(--theme-color);
+  border: 2rpx solid var(--theme-color);
+}
+.btn-submit-disabled{
+  color: var(--text-gray);
+  border: 2rpx solid var(--text-gray);
+}
+.btn-submit-active:active{
   background: transparent;
-  color: #409eff;
+  color: var(--theme-color);
   border: 2rpx solid;
+}
+.btn-submit-radius-0{
+  border-radius: 0;
+}
+.btn-submit-large{
+  padding: 25rpx;
+}
+.btn-submit-small{
+  padding: 15rpx;
 }
 .image-small{
   width: 80rpx;
@@ -100,4 +148,15 @@
 }
 .text-25{
   font-size: 25rpx;
+}
+.text-gray{
+  color: #aaa;
+}
+.text-theme{
+  color: var(--theme-color);
+}
+.input-placeholder{
+  font-weight: 100;
+  color: #c5c5c5;
+  font-size: 30rpx;
 }

@@ -1,0 +1,86 @@
+/* components/Header/Header.wxss */
+.f-header{
+  height: 100rpx;
+  padding-right: 20rpx;
+}
+.f-header-drop{
+  padding: 0 30rpx;
+  height: 100%;
+}
+.f-header-drop:active{
+  background: var(--light-gray-color);
+}
+.f-header-drop .iconfont{
+  font-size: 30rpx;
+  margin-left: 10rpx;
+  transform: rotateZ(90deg);
+  transition: transform 0.3s;
+}
+.f-header-drop .i-reverse{
+  transform: rotateZ(270deg);
+}
+.f-header-suggestion{
+  --h-size: 100rpx;
+  position: fixed;
+  top: var(--h-size);
+  width: 100vw;
+  /* height: calc(100% - var(--h-size)); */
+  height: 0;
+  overflow: hidden;
+  z-index: 9;
+  background: rgba(0,0,0,0.5);
+  transition: height 0.1s;
+}
+.f-header-suggestion-open{
+  height: calc(100% - var(--h-size)) !important;
+}
+.f-header-suggestion-item{
+  background: #fff;
+  text-align: center;
+}
+.f-header-suggestion-item:active{
+  background: var(--light-gray-color);
+}
+.f-header-suggestion-suffix{
+  justify-content: center;
+  padding: 20rpx 0;
+  margin-top: 10rpx;
+  color: #fff;
+}
+.f-header-suggestion-suffix text{
+  margin-left: 10rpx;
+}
+.f-header-suggestion-active{
+  color: var(--active-color);
+}
+
+.f-header-btn{
+  width: 100rpx !important;
+  padding: 0;
+  font-size: 30rpx;
+  font-weight: normal;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: var(--theme-color);
+  color: #fff;
+}
+
+.f-header-mid{
+  flex: 1 1 auto;
+  margin: 0 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.f-header-mid > view{
+  height: 100%;
+}
+.f-header-mid-text{
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.f-header-mid .iconfont{
+  margin-right: 10rpx;
+}

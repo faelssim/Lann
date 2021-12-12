@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "record-item": "../../components/Item/Record"
+  },
+  "navigationBarTitleText": "预约记录"
+}

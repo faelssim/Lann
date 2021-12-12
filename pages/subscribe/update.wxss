@@ -1,0 +1,11 @@
+/* pages/subscribe/update.wxss */
+.update-box{
+  flex: 1 1 auto;
+  overflow: hidden auto;
+}
+.update-box-item{
+  padding: 0 20rpx;
+}
+.update-box-item + .update-box-item{
+  /* margin-top: -20rpx; */
+}

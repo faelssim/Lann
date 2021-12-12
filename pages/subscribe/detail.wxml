@@ -1,0 +1,41 @@
+<!--pages/subscribe/detail.wxml-->
+<view>
+  <view class="ie-box flex-column padding-20 bod-bottom">
+    <text class="text-30 text-theme">已预约</text>
+    <text class="text-gray text-30 mt-10">创建时间：2020-09-09 12:23</text>
+  </view>
+  <view class="ie-box label-deep-dark bod-bottom bod-top mt-10">
+    <text>客户信息</text>
+  </view>
+  <view class="ie-box padding-20 detail-box">
+    <view class="flex-row text-30">
+      <text class="shrink-0">客户姓名：</text>
+      <text>Jsa</text>
+    </view>
+    <view class="flex-row text-30 mt-10">
+      <text class="shrink-0">客户姓名：</text>
+      <text>Jsa</text>
+    </view>
+  </view>
+  <view class="ie-box label-deep-dark bod-bottom bod-top mt-10">
+    <text>预约信息</text>
+  </view>
+  <view class="ie-box padding-20 detail-box">
+    <view class="flex-row text-30">
+      <text class="shrink-0">客户姓名：</text>
+      <text>Jsa</text>
+    </view>
+    <view class="flex-row text-30 mt-10">
+      <text class="shrink-0">客户姓名：</text>
+      <text>Jsa</text>
+    </view>
+  </view>
+  <view class="flex-row ie-box padding-20 bod-bottom bod-top detail-box-footer">
+    <view class="mr-20">
+      <button class="btn-submit-ghost btn-submit-disabled text-25">取消预约</button>
+    </view>
+    <view>
+      <button class="btn-submit-ghost text-25">修改预约</button>
+    </view>
+  </view>
+</view>

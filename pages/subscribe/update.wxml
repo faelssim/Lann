@@ -1,0 +1,56 @@
+<!--pages/subscribe/update.wxml-->
+<view class="flex-column container-100">
+  <view class="update-box w-100">
+    <view class="ie-box label-deep-dark">
+      <text>客户信息</text>
+    </view>
+    <view class="ie-box update-box-item">
+      <f-input
+        border="{{false}}"
+        open-slot="{{true}}"
+        label="客户类型"
+        align="right"
+      >
+        <text class="text-gray">老客户</text>
+      </f-input>
+    </view>
+    <view class="ie-box update-box-item">
+      <f-input
+        border="{{false}}"
+        open-slot="{{true}}"
+        label="客户类型"
+        align="right"
+      >
+        <text class="text-gray">老客户</text>
+      </f-input>
+    </view>
+    <view class="ie-box label-deep-dark">
+      <text>预约信息</text>
+    </view>
+    <view class="ie-box update-box-item">
+      <f-input
+        border="{{false}}"
+        open-slot="{{true}}"
+        label="预约门店"
+        align="right"
+      >
+        <text class="text-gray" catchtap="handleOpenCalendar">老客户</text>
+      </f-input>
+    </view>
+    <view class="ie-box update-box-item">
+      <f-input
+        border="{{false}}"
+        required="{{true}}"
+        label="陪同人姓名"
+        align="right"
+        value="Jay"
+      >
+      </f-input>
+    </view>
+  </view>
+  <!-- Footer -->
+  <view class="w-100 shrink-0">
+    <button class="btn-submit btn-submit-large text-30 btn-submit-radius-0" catchtap="handleSelectDate">确认修改</button>
+  </view>
+</view>
+<f-calendar model:visible="{{visible}}"></f-calendar>

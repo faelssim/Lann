@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "item": "../../components/Item/Item"
-  }
+  },
+  "navigationBarTitleText": "FAELSSIM"
 }

@@ -1,7 +1,6 @@
 <!--pages/login/login.wxml-->
 <view class="container-100 flex-column contaniner-login">
   <view class="flex-column">
-    <!-- <text>CVP</text> -->
     <image
       class="login-logo"
       src="https://images.pexels.com/photos/2389349/pexels-photo-2389349.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"

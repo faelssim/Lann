@@ -1,0 +1,12 @@
+<!--components/Textarea/Textarea.wxml-->
+<textarea
+  class="bod text-30 {{autoHeight ? 'textarea-auto-height' : ''}}"
+  placeholder-class="input-placeholder"
+  placeholder="{{placeholder}}"
+  maxlength="{{maxlength}}"
+  auto-height="{{autoHeight}}"
+  cursor-spacing="{{10}}"
+  model:value="{{value}}"
+  bindfocus="handleFocus"
+  bindblur="handleBlur"
+></textarea>

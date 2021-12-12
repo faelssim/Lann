@@ -1,0 +1,5 @@
+/* components/Textarea/Textarea.wxss */
+.textarea-auto-height{
+  min-height: 200rpx;
+  width: 100%;
+}

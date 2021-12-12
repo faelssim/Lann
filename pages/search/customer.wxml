@@ -1,0 +1,105 @@
+<!--pages/search/customer.wxml-->
+<view class="container-100">
+  <f-header
+    drop-list="{{serarchDropList}}"
+    date="{{['2021-09-12', '2021-10-12']}}"
+    placeholder="请输入客户姓名"
+    type="dateRange"
+  ></f-header>
+  <scroll-view
+    scroll-y="{{true}}"
+    class="search-scroll-view"
+  >
+    <view class="ie-box bod-bottom bod-top mt-10 padding-20 customer-item">
+      <view class="flex-row text-30">
+        <text class="text-bold">Jay</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+      <view class="flex-row text-30 mt-20">
+        <text>1677661212</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+    </view>
+    <view class="ie-box bod-bottom bod-top mt-10 padding-20 customer-item">
+      <view class="flex-row text-30">
+        <text class="text-bold">Jay</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+      <view class="flex-row text-30 mt-20">
+        <text>1677661212</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+    </view>
+    <view class="ie-box bod-bottom bod-top mt-10 padding-20 customer-item">
+      <view class="flex-row text-30">
+        <text class="text-bold">Jay</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+      <view class="flex-row text-30 mt-20">
+        <text>1677661212</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+    </view>
+    <view class="ie-box bod-bottom bod-top mt-10 padding-20 customer-item">
+      <view class="flex-row text-30">
+        <text class="text-bold">Jay</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+      <view class="flex-row text-30 mt-20">
+        <text>1677661212</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+    </view>
+    <view class="ie-box bod-bottom bod-top mt-10 padding-20 customer-item">
+      <view class="flex-row text-30">
+        <text class="text-bold">Jay</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+      <view class="flex-row text-30 mt-20">
+        <text>1677661212</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+    </view>
+    <view class="ie-box bod-bottom bod-top mt-10 padding-20 customer-item">
+      <view class="flex-row text-30">
+        <text class="text-bold">Jay</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+      <view class="flex-row text-30 mt-20">
+        <text>1677661212</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+    </view>
+    <view class="ie-box bod-bottom bod-top mt-10 padding-20 customer-item">
+      <view class="flex-row text-30">
+        <text class="text-bold">Jay</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+      <view class="flex-row text-30 mt-20">
+        <text>1677661212</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+    </view>
+    <view class="ie-box bod-bottom bod-top mt-10 padding-20 customer-item">
+      <view class="flex-row text-30">
+        <text class="text-bold">Jay</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+      <view class="flex-row text-30 mt-20">
+        <text>1677661212</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+    </view>
+    <view class="ie-box bod-bottom bod-top mt-10 padding-20 customer-item">
+      <view class="flex-row text-30">
+        <text class="text-bold">Jay</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+      <view class="flex-row text-30 mt-20">
+        <text>1677661212</text>
+        <text class="text-gray">所属地区：华东区</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+

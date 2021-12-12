@@ -1,0 +1,25 @@
+/* pages/subscribe/records.wxss */
+.record-tabs{
+  height: 100rpx;
+  box-shadow: 0 2rpx 10rpx var(--gray-color);
+}
+.record-tabs > view{
+  width: 25%;
+  align-items: center;
+  color: #777;
+  font-weight: 900;
+}
+.record-tabs > view view{
+  padding-bottom: 15rpx;
+  border-bottom: 4rpx solid transparent;
+}
+.record-tabs .record-tab-active view{
+  color: var(--active-color);
+  border-bottom: 4rpx solid var(--active-color);
+}
+.record-box{
+  height: calc(100% - 100rpx);
+}
+.record-scroll-view{
+  height: 100%;
+}
