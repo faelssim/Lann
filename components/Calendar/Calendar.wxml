@@ -1,11 +1,14 @@
 <!--components/Calendar/Calendar.wxml-->
 <wxs module="config">
-  function itemClass (i, c, o) {
+  function itemClass (i, c) {
     var m_equal = i.m === c.M
-    var d_equal = m_equal && i.d === o.D && i.y === o.Y 
     return [
       m_equal ? 'f-text-bold' : 'f-text-tiny',
-      d_equal ? 'f-text-light' : ''
+      i.disabled ? 'f-text-disabled' : '',
+      i.checked ? 'f-text-checked' : '',
+      i.isStart ? 'f-cell-bound-start' : '',
+      i.isEnd ? 'f-cell-bound-end' : '',
+      i.isMid ? 'f-cell-mid' : ''
     ]
   }
   module.exports = {
@@ -13,41 +16,47 @@
   }
 </wxs>
 <view wx:if="{{visible}}" class="flex-column f-calendar">
-  <view
-    class="image-radius-10 text-30 f-calendar-box"
-    animation="{{modalAnimation}}"
-    bindtransitionend="handleCloseAnimationEnd"
-  >
-    <!--  -->
-    <view class="f-calendar-header">
-      <!-- 选项 -->
-      <view class="flex-row f-calendar-top">
-        <view class="f-calendar-cell" catchtap="handlePrevMonth">
-          <i class="iconfont icon-return"></i>
+  <view class="f-calendar-container">
+    <view
+      class="image-radius-10 text-30 f-calendar-box"
+      animation="{{modalAnimation}}"
+      bindtransitionend="handleCloseAnimationEnd"
+    >
+      <!-- Header -->
+      <view class="f-calendar-header">
+        <!-- 选项 -->
+        <view class="flex-row f-calendar-top">
+          <view class="f-calendar-cell" catchtap="handlePrevMonth">
+            <i class="iconfont icon-return"></i>
+          </view>
+          <text class="f-text-bold">{{current.Y}}{{splitCode}}{{current.M < 10 ? '0' + current.M : current.M}}</text>
+          <view class="f-calendar-cell" catchtap="handleNextMonth">
+            <i class="iconfont icon-enter"></i>
+          </view>
         </view>
-        <text>{{current.Y}}{{splitCode}}{{current.M < 10 ? '0' + current.M : current.M}}</text>
-        <view class="f-calendar-cell" catchtap="handleNextMonth">
-          <i class="iconfont icon-enter"></i>
+        <view class="flex-row f-calendar-item">
+          <view class="f-calendar-cell" wx:for="{{weeks}}" wx:key="*this">{{item}}</view>
         </view>
       </view>
-      <view class="flex-row f-calendar-item">
-        <view class="f-calendar-cell" wx:for="{{weeks}}" wx:key="*this">{{item}}</view>
+      <view class="flex-row f-calendar-mid">
+        <view
+          class="f-calendar-cell f-calendar-cell-2 {{config.itemClass(item, current, checkedDate, type)}}"
+          wx:for="{{List}}"
+          wx:key="{{index}}"
+          data-value="{{item}}"
+          data-idx="{{index}}"
+          catchtap="handleCheckedCell"
+        >
+          <text
+            class=""
+          >{{item.d}}</text>
+          <text wx:if="{{!item.disabled && !!validText}}" class="f-text-sub">{{validText}}</text>
+        </view>
       </view>
+      <i class="iconfont icon-delete f-c-close" catchtap="handleCloseCalendar"></i>
     </view>
-    <view class="flex-row f-calendar-mid">
-      <view
-        class="f-calendar-cell f-calendar-cell-2"
-        wx:for="{{List}}"
-        wx:key="{{index}}"
-        data-value="{{item}}"
-        catchtap="handleCheckedCell"
-      >
-        <text
-          class="{{config.itemClass(item, current, init)}}"
-        >{{item.d}}</text>
-        <text wx:if="{{!item.disabled}}" class="f-text-sub">可预约</text>
-      </view>
+    <view class="mt-20">
+      <button class="btn-submit btn-submit-radius-20 text-30" hover-class="none" catchtap="handleLogin">确定</button>
     </view>
-    <i class="iconfont icon-delete f-c-close" catchtap="handleCloseCalendar"></i>
   </view>
 </view>

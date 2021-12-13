@@ -1,0 +1,10 @@
+<!--pages/search/project.wxml-->
+<view>
+  <f-calendar
+    visible="{{true}}"
+    value=""
+    type="dateRange"
+    min-date="2021-12-13"
+    valid-text=""
+  ></f-calendar>
+</view>

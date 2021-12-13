@@ -1,5 +1,5 @@
 {
-  "entryPagePath": "pages/search/history",
+  "entryPagePath": "pages/search/project",
   "pages": [
     "pages/detail/detail",
     "pages/index/index",
@@ -12,7 +12,8 @@
     "pages/subscribe/update",
     "pages/subscribe/detail",
     "pages/search/customer",
-    "pages/search/history"
+    "pages/search/history",
+    "pages/search/project"
   ],
   "usingComponents": {
     "f-input": "./components/Input/Input",

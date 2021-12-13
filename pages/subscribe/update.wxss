@@ -6,6 +6,3 @@
 .update-box-item{
   padding: 0 20rpx;
 }
-.update-box-item + .update-box-item{
-  /* margin-top: -20rpx; */
-}

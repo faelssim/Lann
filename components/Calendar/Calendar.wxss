@@ -9,9 +9,12 @@
   background: rgba(0,0,0,0.5);
   align-items: center;
 }
+.f-calendar-container{
+  width: 80vw;
+}
 .f-calendar-box{
   /*  */
-  width: 80vw;
+  width: 100%;
   background: #fff;
   padding-bottom: 30rpx;
   position: relative;
@@ -19,7 +22,7 @@
   opacity: 0;
 }
 .f-calendar-header{
-  background: #e8e8e8;
+  background: var(--light-gray-color);
   border-top-left-radius: 10rpx;
   border-top-right-radius: 10rpx;
   padding: 20rpx 0;
@@ -50,14 +53,31 @@
 }
 .f-text-bold{
   font-weight: 900;
-  color: #888 !important;
 }
 .f-text-tiny{
   font-weight: 200;
-  color: #aaa;
 }
-.f-text-light{
-  color: red !important;
+.f-text-disabled{
+  color: var(--gray-color)
+}
+.f-text-checked{
+  color: red;
+}
+.f-cell-bound-start{
+  background: var(--theme-color);
+  color: #fff;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+.f-cell-bound-end{
+  background: var(--theme-color);
+  color: #fff;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.f-cell-mid{
+  background: var(--light-theme-color);
+  color: #fff;
 }
 .f-calendar-mid{
   flex-wrap: wrap;

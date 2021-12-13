@@ -9,18 +9,29 @@ Component({
       type: Boolean,
       value: false
     },
-    value: {
+    type: {
       type: String,
+      value: 'date' // date只选择一个时间 dateRange 选择范围
+    },
+    value: {
+      type: [String, Array],
       value: ''
     },
     splitCode: {
       type: String,
       value: '-'
     },
-    range: {
+    maxlength: { // 最长可选择的天数
       type: Number,
       value: 7
-    }
+    },
+    validText: { // 可选择的日期提示文字
+      type: String,
+      value: '' // 可预约
+    },
+    minDate: String,
+    maxDate: String,
+    showMark: Boolean,
   },
   /**
    * 组件的初始数据
@@ -36,10 +47,10 @@ Component({
     List: [],
     modalAnimation: {},
     isClose: false,
+    checkedDate: []
   },
   observers: {
     'current.M': function () {
-      // console.log(v)
       this.getDayList()
     },
     'visible': function (v) {
@@ -59,7 +70,7 @@ Component({
         duration: 500,
         timingFunction: 'ease'
       })
-      this.getCurrentDate(this.value)
+      this.getCurrentDate(this.data.value)
     },
     detached () {}
   },
@@ -107,33 +118,69 @@ Component({
       })
     },
     handleCheckedCell (e) {
-      const { currentTarget: { dataset: { value } } } = e
-      console.log(value)
+      const { type } = this.data
+      const { currentTarget: { dataset: { value, idx } } } = e
       if (value.disabled) {
         wx.showToast({
           title: '该日期不可选',
           icon: 'error'
         })
       } else {
-        const { splitCode } = this.data
-        this.setData({
-          value: [value.y, value.m.padStart(2, '0'), value.d.padStart(2, '0')].join(splitCode)
+        if (type === 'date') {
+          const { List } = this.data
+          const checkDate = [`${value.y}/${value.m}/${value.d}`]
+          this.setData({
+            checkedDate: checkDate
+          })
+          this.setCellStatus(List, checkDate)
+          this.setData({
+            List: List
+          })
+        } else {
+          const { checkedDate, List } = this.data
+          checkedDate.length === 2 && (checkedDate.length = 0)
+          checkedDate.push(`${value.y}/${value.m}/${value.d}`)
+          checkedDate.sort((a, b) => {
+            return new Date(a) < new Date(b) ? -1 : 1
+          })
+          this.setCellStatus(List, checkedDate)
+          this.setData({
+            checkedDate: checkedDate,
+            List: List
+          })
+        }
+        // const { splitCode } = this.data
+        // this.setData({
+        //   value: [value.y, value.m.padStart(2, '0'), value.d.padStart(2, '0')].join(splitCode)
+        // })
+        // this.handleCloseCalendar()
+      }
+    },
+    setCellStatus (target, checkedDate) {
+      if (this.data.type === 'date') {
+        target.forEach(item => {
+          item.checked = checkedDate[0] === `${item.y}/${item.m}/${item.d}`
         })
-        this.handleCloseCalendar()
+      } else {
+        target.forEach((item) => {
+          item.isStart = checkedDate[0] ? checkedDate[0] === `${item.y}/${item.m}/${item.d}` : false
+          item.isEnd = checkedDate[1] ? checkedDate[1] === `${item.y}/${item.m}/${item.d}` : false
+          item.isMid = checkedDate.length > 1 && new Date(checkedDate[0]) < new Date(`${item.y}/${item.m}/${item.d}`) && new Date(checkedDate[1]) > new Date(`${item.y}/${item.m}/${item.d}`) 
+        })
       }
     },
     getCurrentDate (value) {
-      const C = {}
-      if (value) {
-        const T = T.split(this.data.splitCode)
-        C.Y =  +T[0]
-        C.M = +T[1]
-        C.D = +T[2]
+      const { type } = this.data
+      let tmpDate
+      if (type === 'date') {
+        tmpDate = value ? new Date(value) : new Date()
       } else {
-        const T = new Date()
-        C.Y =  T.getFullYear()
-        C.M = T.getMonth() + 1
-        C.D = T.getDate()
+        tmpDate = Array.isArray(value) && value.length ? new Date(value[0]) : new Date()
+      }
+      const C = {
+        Y: tmpDate.getFullYear(),
+        M: tmpDate.getMonth() + 1,
+        D: tmpDate.getDate()
       }
       this.setData({
         current: C,
@@ -153,7 +200,7 @@ Component({
     getPrevMonth () {
       const { current: { Y, M } } = this.data
       if (M === 1) {
-        return [M, Y - 1]
+        return [12, Y - 1]
       } else {
         return [M - 1, Y]
       }
@@ -169,12 +216,10 @@ Component({
     },
     getDayList () {
       const List = []
-      const { current: { Y, M, D }, init, range, splitCode } = this.data
+      const { current: { Y, M, D }, minDate, maxDate, type, checkedDate } = this.data
       const CURRENT_DAYS = this.getMonthDays(M, Y)
       const F = this.getFirstDayInWeek()
       const L = 42 - F - CURRENT_DAYS
-      let validDate = util.getValidDateRange(`${init.Y}-${init.M}-${init.D}`, range)
-      validDate = Object.values(validDate).map(item => item.v)
       //补齐前缀天数
       if (F > 0) {
         const T = this.getPrevMonth()
@@ -184,7 +229,7 @@ Component({
             d: prev - i,
             m: T[0],
             y: T[1],
-            disabled: true
+            disabled: (minDate ? new Date(minDate) > new Date(`${T[1]}-${T[0]}-${prev-i}`) : false) || (maxDate ? new Date(maxDate) < new Date(`${T[1]}-${T[0]}-${prev-i}`) : false)
           })
         }
       }
@@ -193,7 +238,7 @@ Component({
           d: i,
           m: M,
           y: Y,
-          disabled: !validDate.includes(`${Y}${splitCode}${M}${splitCode}${i}`)
+          disabled: (minDate ? new Date(minDate) > new Date(`${Y}-${M}-${i}`) : false) || (maxDate ? new Date(maxDate) < new Date(`${Y}-${M}-${i}`) : false)
         })
       }
       // 补齐后缀天数
@@ -204,10 +249,11 @@ Component({
             d: i + 1,
             m: T[0],
             y: T[1],
-            disabled: !validDate.includes(`${T[1]}${splitCode}${T[0]}${splitCode}${i + 1}`)
+            disabled: (minDate ? new Date(minDate) > new Date(`${T[1]}-${T[0]}-${i + 1}`) : false) || (maxDate ? new Date(maxDate) < new Date(`${T[1]}-${T[0]}-${i + 1}`) : false)
           })
         }
       }
+      this.setCellStatus(List, checkedDate)
       this.setData({
         List: List
       })
